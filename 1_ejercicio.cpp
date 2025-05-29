@@ -1,21 +1,29 @@
 #include<iostream>
 using namespace std;
 
-float calculosuma(int);
+double calculosuma(int);
 int factorial(int);
 
 int main(){
 	int num;
-	float suma;
+	double suma;
 	cout<<"Ingrese el valor de n: ";
 	cin>>num;
-	suma=calculosuma(num);
-	cout<<"La suma de la serie es: "<<suma;
+	if(num<=0){
+		cout<<"ERROR: Introduzca un numero mayor que 0"<<endl;
+		return 0;
+	}
+	else{
+		suma=calculosuma(num);
+		cout.precision(4);
+		cout<<fixed;
+		cout<<"La suma de la serie es: "<<suma;
+	}
 	return 0;
 }
 
-float calculosuma(int num){
-	float suma=0;
+double calculosuma(int num){
+	double suma=0;
 	for(int i=1;i<=num;i++){
 		suma=suma+((factorial(i))/(i*2.00));
 	}
