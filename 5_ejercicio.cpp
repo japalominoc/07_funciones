@@ -2,15 +2,18 @@
 using namespace std;
 
 int suma_divisores(int);
+bool son_amigos(int, int); 
 int main(){
-	int num1,num2,suma=0;
+	int num1,num2;
 	cout<<"Ingrese el primer numero: ";
 	cin>>num1;
 	cout<<"Ingrese el segundo numero: ";
 	cin>>num2;
-	int suma1 = suma_divisores(num1);
-	int suma2 = suma_divisores(num2);
-	if (suma1 == num2 && suma2 == num1) {
+	if (num1 <= 0 || num2 <= 0) {
+    	cout << "Ambos numeros deben ser positivos." << endl;
+        return 1; 
+    }
+	if (son_amigos(num1,num2)) {
 	    cout << num1 << " y " << num2 << " son numeros amigos." << endl;
 	} else {
 	    cout << num1 << " y " << num2 << " no son numeros amigos." << endl;
@@ -25,4 +28,7 @@ int suma_divisores(int a){
 		}
 	}
 	return suma;
+}
+bool son_amigos(int a, int b) {
+    return suma_divisores(a) == b && suma_divisores(b) == a;
 }
