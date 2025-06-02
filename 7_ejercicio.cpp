@@ -3,8 +3,10 @@ using namespace std;
 void fibonacci(int);
 int main(){
 	int num;
-	cout<<"Ingrese la cantidad de terminos a mostrar: ";
-	cin>>num;
+	do {
+	    cout << "Ingrese la cantidad de terminos a mostrar (mayor que 0): ";
+	    cin >> num;
+	} while (num < 1);
 	fibonacci(num);
 	return 0;
 }
